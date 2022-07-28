@@ -1,4 +1,4 @@
-package com.ericsson.apiprodutos.UserRepositories;
+package com.ericsson.apiprodutos.Repositories;
 
 import com.ericsson.apiprodutos.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;

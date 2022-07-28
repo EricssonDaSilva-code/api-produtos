@@ -1,14 +1,21 @@
 package com.ericsson.apiprodutos.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import javax.persistence.OneToMany;
 
 @Entity
 @Table(name = "TB_USER")
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
-
+    @JsonIgnore
+    @OneToMany(mappedBy = "client")
+    private List<Order> orders = new ArrayList<>();
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,6 +34,10 @@ public class User implements Serializable {
         this.email = email;
         this.phone = phone;
         this.password = password;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
     }
 
     public Long getId() {
