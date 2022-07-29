@@ -1,6 +1,6 @@
 package com.ericsson.apiprodutos.services;
 
-import com.ericsson.apiprodutos.Repositories.OrderRepository;
+import com.ericsson.apiprodutos.repositories.OrderRepository;
 import com.ericsson.apiprodutos.entities.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

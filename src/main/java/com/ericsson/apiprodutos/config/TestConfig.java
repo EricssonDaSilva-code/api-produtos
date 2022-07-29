@@ -1,8 +1,8 @@
 package com.ericsson.apiprodutos.config;
 
-import com.ericsson.apiprodutos.Repositories.CategoryRepository;
-import com.ericsson.apiprodutos.Repositories.OrderRepository;
-import com.ericsson.apiprodutos.Repositories.UserRepository;
+import com.ericsson.apiprodutos.repositories.CategoryRepository;
+import com.ericsson.apiprodutos.repositories.OrderRepository;
+import com.ericsson.apiprodutos.repositories.UserRepository;
 import com.ericsson.apiprodutos.entities.Category;
 import com.ericsson.apiprodutos.entities.Order;
 import com.ericsson.apiprodutos.entities.User;
