@@ -1,7 +1,9 @@
 package com.ericsson.apiprodutos.config;
 
+import com.ericsson.apiprodutos.Repositories.CategoryRepository;
 import com.ericsson.apiprodutos.Repositories.OrderRepository;
 import com.ericsson.apiprodutos.Repositories.UserRepository;
+import com.ericsson.apiprodutos.entities.Category;
 import com.ericsson.apiprodutos.entities.Order;
 import com.ericsson.apiprodutos.entities.User;
 import com.ericsson.apiprodutos.entities.enums.OrderStatus;
@@ -19,12 +21,20 @@ public class TestConfig implements CommandLineRunner {
 
     @Autowired
     private UserRepository userRepository;
-
     @Autowired
     private OrderRepository orderRepository;
 
+    @Autowired
+    private CategoryRepository categoryRepository;
+
     @Override
     public void run(String... args) throws Exception {
+
+        Category cat1 = new Category(null, "Electronics");
+        Category cat2 = new Category(null, "Books");
+        Category cat3 = new Category(null, "Computers");
+
+        categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
 
         User u1 = new User(null, "Maria Brown", "maria@gmail.com", "988888888", "123456");
         User u2 = new User(null, "Alex Green", "alex@gmail.com", "977777777", "123456");
